@@ -1,0 +1,10 @@
+import React from 'react';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { formatPrice } from './PriceSummary';
+
+export default function ProductCard({ product, onPress, onAddToCart }) {
+  const image = product.thumbnail || product.images?.[0];
+  return <View style={styles.card}><TouchableOpacity activeOpacity={0.82} onPress={onPress} style={styles.product}><View style={styles.imageBox}>{image ? <Image source={{ uri: image }} style={styles.image} resizeMode="contain" /> : <Text style={styles.missing}>Không có ảnh</Text>}</View><Text numberOfLines={2} style={styles.title}>{product.title || 'Sản phẩm'}</Text><View style={styles.meta}><Text style={styles.price}>{formatPrice(product.price)}</Text><Text style={styles.rating}>★ {Number(product.rating || 0).toFixed(1)}</Text></View></TouchableOpacity><TouchableOpacity activeOpacity={0.75} onPress={onAddToCart} style={styles.add}><Text style={styles.addText}>＋ Thêm vào giỏ</Text></TouchableOpacity></View>;
+}
+
+const styles = StyleSheet.create({ card: { flex: 1, backgroundColor: '#fff', borderRadius: 19, padding: 10, borderWidth: 1, borderColor: '#eff1f5', marginBottom: 13, elevation: 2, shadowColor: '#15213b', shadowOpacity: 0.04, shadowRadius: 8, shadowOffset: { width: 0, height: 3 } }, product: { flex: 1 }, imageBox: { height: 130, borderRadius: 13, backgroundColor: '#f7f8fb', alignItems: 'center', justifyContent: 'center', marginBottom: 10 }, image: { height: '90%', width: '90%' }, missing: { color: '#98a2b3', fontSize: 12 }, title: { minHeight: 38, color: '#252b38', fontWeight: '600', fontSize: 13, lineHeight: 18 }, meta: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 7 }, price: { color: '#5b5ce2', fontSize: 16, fontWeight: '800' }, rating: { fontSize: 11, color: '#858b98' }, add: { marginTop: 10, backgroundColor: '#5b5ce2', borderRadius: 11, paddingVertical: 9, alignItems: 'center' }, addText: { color: '#fff', fontSize: 11, fontWeight: '700' } });

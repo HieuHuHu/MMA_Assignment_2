@@ -1,0 +1,7 @@
+node_modules/
+.expo/
+dist/
+.expo-export-check/
+android/
+ios/
+*.log

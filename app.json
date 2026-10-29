@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "Shoply",
+    "slug": "shoply-ecommerce",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#f5f7fb"
+    },
+    "android": {
+      "package": "com.assignment2.shoply"
+    },
+    "ios": {
+      "bundleIdentifier": "com.assignment2.shoply"
+    }
+  }
+}
