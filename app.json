@@ -13,6 +13,11 @@
     },
     "ios": {
       "bundleIdentifier": "com.assignment2.shoply"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ff802ad2-d30a-4b09-8dc2-f6528b1d9cb4"
+      }
     }
   }
 }
